@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card_intel_title: "Intelligence Collective",
             card_intel_desc: "Participez aux analyses et utilisez les indicateurs de marché et prévisions issus de la communauté pour affiner vos décisions.",
             preview_title: "Aperçu de la Plateforme",
-            preview_subtitle: "Une interface claire pour des décisions éclairées.",
+            preview_subtitle: "Une ergonomie intuitive pour des décisions stratégiques.",
             preview_caption_chart: "Analyse Technique & Indicateurs",
             preview_caption_metrics: "Métriques Institutionnelles",
             preview_caption_drawdown: "Contrôle du Risque & Monte Carlo",
