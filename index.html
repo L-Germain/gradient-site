@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Systems | Intelligence Quantitative Collaborative</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Animation -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Container removed from wrapping everything to allow fixed header full width if needed, but keeping it for now for content centering -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <img src="assets/logo_transparent.png" alt="Gradient Systems" class="logo-img">
+                <span class="logo-text">Gradient Systems</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#vision" data-i18n="nav_vision">Vision</a></li>
+                    <li><a href="#technologie" data-i18n="nav_technology">Technologie</a></li>
+                    <li><a href="#preview" data-i18n="nav_platform">Plateforme</a></li>
+                    <li><a href="#solutions" data-i18n="nav_solutions">Solutions</a></li>
+                    <li><a href="#contact" class="btn btn-primary"
+                            style="padding: 0.5rem 1.5rem; color: #000; box-shadow: none;" data-i18n="nav_beta">Bêta</a>
+                    </li>
+                    <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="vision" class="hero">
+            <h1 data-i18n="hero_title">Gradient System</h1>
+            <p><strong data-i18n="hero_strong">Une technologie de pointe, pensée pour les Pros, adaptée pour les
+                    Particuliers.</strong><br>
+                <span data-i18n="hero_subtitle">La technologie réduit l'écart. La communauté fait la différence.</span>
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#solutions" class="btn btn-primary" data-i18n="hero_cta_offer">Découvrir les Offres</a>
+                <a href="#vision" class="btn" style="border: 1px solid var(--glass-border);"
+                    data-i18n="hero_cta_more">Notre Vision</a>
+            </div>
+        </section>
+
+        <!-- Problem/Stats Section (Hidden for now)
+        <section class="stats-section">
+            <div class="container">
+                <div class="stat-number">90% vs 15%</div>
+                <p class="stat-label">90% des particuliers perdent. 15% des pros échouent.<br>Passez du côté de ceux qui gagnent.</p>
+            </div>
+        </section>
+        -->
+
+        <!-- Three Pillars Section -->
+        <section id="technologie" class="presentation">
+            <div class="section-title">
+                <h2 data-i18n="tech_title">Technologie</h2>
+                <p data-i18n="tech_subtitle">Performance & Rigueur.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3 data-i18n="card_backtest_title">Création & Backtest</h3>
+                    <p data-i18n="card_backtest_desc">Développez et backtestez vos stratégies en Python avec notre
+                        moteur ultra-rapide. Accédez à des métriques institutionnelles (Ratio de Sharpe, Sortino, Max
+                        Drawdown).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3 data-i18n="card_risk_title">Gestion du Risque Avancée</h3>
+                    <p data-i18n="card_risk_desc">Utilisez nos simulations Monte Carlo et nos outils d'analyse de
+                        covariance pour stress-tester vos modèles.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h3 data-i18n="card_intel_title">Intelligence Collective</h3>
+                    <p data-i18n="card_intel_desc">Participez aux analyses et utilisez les indicateurs de marché et
+                        prévisions issus de la communauté pour affiner vos décisions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Preview Section -->
+        <section id="preview" class="presentation" style="padding-bottom: 2rem;">
+            <div class="section-title">
+                <h2 data-i18n="preview_title">Aperçu de la Plateforme</h2>
+                <p data-i18n="preview_subtitle">Une interface claire pour des décisions éclairées.</p>
+            </div>
+
+            <div class="preview-gallery">
+                <div class="preview-item">
+                    <div class="img-container">
+                        <img src="assets/app_chart.png" alt="Graphique Technique" class="preview-img">
+                    </div>
+                    <p class="preview-caption" data-i18n="preview_caption_chart">Analyse Technique & Indicateurs</p>
+                </div>
+                <div class="preview-item">
+                    <div class="img-container">
+                        <img src="assets/app_metrics.png" alt="Métriques de Performance" class="preview-img"
+                            style="margin-bottom: 10px;">
+                        <img src="assets/app_drawdown.png" alt="Drawdown" class="preview-img">
+                    </div>
+                    <p class="preview-caption" data-i18n="preview_caption_metrics">Métriques Institutionnelles</p>
+                </div>
+                <div class="preview-item">
+                    <div class="img-container">
+                        <img src="assets/app_synth_results.png" alt="Monte Carlo" class="preview-img">
+                    </div>
+                    <p class="preview-caption" data-i18n="preview_caption_drawdown">Contrôle du Risque & Monte Carlo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions/Targets Section -->
+        <section id="solutions" class="presentation">
+            <div class="section-title">
+                <h2 data-i18n="offer_title">Notre Offre</h2>
+                <p data-i18n="offer_subtitle">Deux offres, une même excellence technologique.</p>
+            </div>
+
+            <div class="targets-grid">
+                <!-- Retail Card -->
+                <div class="target-card retail">
+                    <span class="target-badge badge-retail" data-i18n="retail_badge">Particuliers</span>
+                    <h3 data-i18n="retail_title">Changez de Dimension</h3>
+                    <p style="margin-bottom: 2rem;" data-i18n="retail_desc">Outil professionnel enfin accessible à tous.
+                        Ne tradez plus seul :
+                        utilisez l'intelligence collective pour sécuriser votre capital.</p>
+                    <ul class="target-features">
+                        <li data-i18n="retail_feat_1">Analyses de niveau Hedge Fund</li>
+                        <li data-i18n="retail_feat_2">Leaderboard & Validation par les pairs</li>
+                        <li data-i18n="retail_feat_3">Montée en compétence continue</li>
+                        <li data-i18n="retail_feat_4">Tarification adaptée à votre évolution</li>
+                    </ul>
+                </div>
+
+                <!-- Pro Card -->
+                <div class="target-card pro">
+                    <span class="target-badge badge-pro" data-i18n="pro_badge">Professionnels</span>
+                    <h3 data-i18n="pro_title">Optimisez votre Gestion</h3>
+                    <p style="margin-bottom: 2rem;" data-i18n="pro_desc">Asset Managers & Family Offices : complétez
+                        votre arsenal. Déléguez
+                        la complexité quantitative pour vous concentrer sur vos clients.</p>
+                    <ul class="target-features">
+                        <li data-i18n="pro_feat_1">Création de stratégie ultra-rapide</li>
+                        <li data-i18n="pro_feat_2">Reporting Client (Conformité MiFID)</li>
+                        <li data-i18n="pro_feat_3">Exports marque blanche</li>
+                        <li data-i18n="pro_feat_4">Validation de risque avancée</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-title">
+                <h2 data-i18n="contact_title">Rejoindre la Bêta</h2>
+                <p data-i18n="contact_subtitle">Notre MVP est opérationnel. Participez à la révolution du trading
+                    quantitatif.</p>
+            </div>
+
+            <div class="contact-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form_name_label">Nom / Entreprise</label>
+                        <input type="text" id="name" class="form-input" placeholder="Votre nom"
+                            data-i18n-placeholder="form_name_placeholder" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form_email_label">Email Professionnel</label>
+                        <input type="email" id="email" class="form-input" placeholder="nom@exemple.com"
+                            data-i18n-placeholder="form_email_placeholder" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" data-i18n="form_type_label">Profil</label>
+                        <select id="type" class="form-input" style="cursor: pointer;">
+                            <option value="particulier" data-i18n="form_type_retail">Investisseur Particulier</option>
+                            <option value="pro" data-i18n="form_type_pro">Professionnel / Institutionnel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Dites-nous en plus sur vos besoins..."
+                            data-i18n-placeholder="form_message_placeholder" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;"
+                        data-i18n="form_submit">Demander un accès</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Image Modal/Lightbox -->
+        <div id="preview-modal" class="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content" id="modal-img-container">
+                <!-- Images will be injected here -->
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Gradient Systems. Technologie de pointe pour tous.</p>
+        </footer>
+    </div> <!-- End container -->
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
