@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Construct mailto link
             const subject = encodeURIComponent(`Nouveau message de ${name} via Gradient System`);
             const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            const destination = "votre-email@example.com";
+            const destination = "louis.germain.pro@gmail.com";
 
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
