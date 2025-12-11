@@ -186,40 +186,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Contact Form Handling (Mailto fallback)
+    // Contact Form Handling (Formspree AJAX)
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Construct mailto link
-            const subject = encodeURIComponent(`Nouveau message de ${name} via Gradient System`);
-            const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            const destination = "louis.germain.pro@gmail.com";
+            // ⚠️ IMPORTANT: Inscrire votre ID Formspree ici
+            // Créez un compte sur https://formspree.io/ (gratuit)
+            // Créez un formulaire et copiez l'ID (ex: "xvgzlqwp")
+            const FORMSPREE_ID = "VOTRE_ID_FORMSPREE";
 
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
-            const loadingText = currentLang === 'fr' ? "Ouverture..." : "Opening...";
+            const loadingText = currentLang === 'fr' ? "Envoi en cours..." : "Sending...";
+            const successText = currentLang === 'fr' ? "Message envoyé !" : "Message sent!";
+            const errorText = currentLang === 'fr' ? "Erreur. Réessayez." : "Error. Try again.";
 
             // Visual Feedback
             btn.innerText = loadingText;
+            btn.disabled = true;
             btn.style.background = "linear-gradient(135deg, #00f2ff, #0066ff)"; // Reverse gradient
 
-            setTimeout(() => {
-                window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
+            const data = new FormData(contactForm);
 
-                // Reset after a short delay
+            // Fetch to Formspree
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: "POST",
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    btn.innerText = successText;
+                    btn.style.background = "#28a745"; // Green
+                    contactForm.reset();
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = "";
+                        btn.disabled = false;
+                    }, 4000);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            // Optional: detailed error handling
+                            console.error(data["errors"]);
+                        }
+                    });
+                    btn.innerText = errorText;
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = "";
+                        btn.disabled = false;
+                    }, 3000);
+                }
+            }).catch(error => {
+                btn.innerText = errorText;
                 setTimeout(() => {
                     btn.innerText = originalText;
-                    btn.style.background = ""; // Reset background
-                    contactForm.reset();
-                }, 1000);
-            }, 500);
+                    btn.style.background = "";
+                    btn.disabled = false;
+                }, 3000);
+            });
         });
     }
 
