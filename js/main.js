@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // ⚠️ IMPORTANT: Inscrire votre ID Formspree ici
             // Créez un compte sur https://formspree.io/ (gratuit)
             // Créez un formulaire et copiez l'ID (ex: "xvgzlqwp")
-            const FORMSPREE_ID = "VOTRE_ID_FORMSPREE";
+            const FORMSPREE_ID = "xjknpoeb";
 
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
