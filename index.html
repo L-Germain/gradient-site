@@ -175,24 +175,25 @@
                 <form id="contactForm" class="contact-form">
                     <div class="form-group">
                         <label for="name" data-i18n="form_name_label">Nom / Entreprise</label>
-                        <input type="text" id="name" class="form-input" placeholder="Votre nom"
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom"
                             data-i18n-placeholder="form_name_placeholder" required>
                     </div>
                     <div class="form-group">
                         <label for="email" data-i18n="form_email_label">Email Professionnel</label>
-                        <input type="email" id="email" class="form-input" placeholder="nom@exemple.com"
+                        <input type="email" id="email" name="email" class="form-input" placeholder="nom@exemple.com"
                             data-i18n-placeholder="form_email_placeholder" required>
                     </div>
                     <div class="form-group">
                         <label for="type" data-i18n="form_type_label">Profil</label>
-                        <select id="type" class="form-input" style="cursor: pointer;">
+                        <select id="type" name="profile" class="form-input" style="cursor: pointer;">
                             <option value="particulier" data-i18n="form_type_retail">Investisseur Particulier</option>
                             <option value="pro" data-i18n="form_type_pro">Professionnel / Institutionnel</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" class="form-textarea" placeholder="Dites-nous en plus sur vos besoins..."
+                        <textarea id="message" name="message" class="form-textarea"
+                            placeholder="Dites-nous en plus sur vos besoins..."
                             data-i18n-placeholder="form_message_placeholder" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;"
