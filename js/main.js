@@ -132,9 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Update Button Text
         if (langToggle) {
             langToggle.innerText = lang === 'fr' ? 'EN' : 'FR';
+        }
+
+        // Update Mobile Button Text
+        const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+        if (mobileLangToggle) {
+            mobileLangToggle.innerText = lang === 'fr' ? 'EN' : 'FR';
         }
     }
 
@@ -145,6 +150,36 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langToggle) {
         langToggle.addEventListener('click', () => {
             setLanguage(currentLang === 'fr' ? 'en' : 'fr');
+        });
+    }
+
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+    if (mobileLangToggle) {
+        mobileLangToggle.addEventListener('click', () => {
+            setLanguage(currentLang === 'fr' ? 'en' : 'fr');
+        });
+    }
+
+    // --- Mobile Menu Logic ---
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-content a');
+
+    if (mobileToggle && mobileOverlay) {
+        // Toggle Menu
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('open');
+            mobileOverlay.classList.toggle('open');
+            document.body.style.overflow = mobileOverlay.classList.contains('open') ? 'hidden' : ''; // Prevent scroll
+        });
+
+        // Close on Link Click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('open');
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            });
         });
     }
 

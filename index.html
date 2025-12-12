@@ -26,7 +26,16 @@
                 <img src="assets/logo_transparent.png" alt="Gradient Systems" class="logo-img">
                 <span class="logo-text">Gradient Systems</span>
             </div>
-            <nav>
+
+            <!-- Mobile Toggle Button -->
+            <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+            </button>
+
+            <!-- Navigation: Added mobile-nav class for JS targeting -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#vision" data-i18n="nav_vision">Vision</a></li>
                     <li><a href="#technologie" data-i18n="nav_technology">Technologie</a></li>
@@ -38,6 +47,20 @@
                     <li><button id="lang-toggle" class="lang-btn">EN</button></li>
                 </ul>
             </nav>
+
+            <!-- Mobile Fullscreen Menu Overlay -->
+            <div class="mobile-menu-overlay">
+                <nav class="mobile-nav-content">
+                    <ul>
+                        <li><a href="#vision" data-i18n="nav_vision">Vision</a></li>
+                        <li><a href="#technologie" data-i18n="nav_technology">Technologie</a></li>
+                        <li><a href="#preview" data-i18n="nav_platform">Plateforme</a></li>
+                        <li><a href="#solutions" data-i18n="nav_solutions">Solutions</a></li>
+                        <li><a href="#contact" class="btn btn-primary" data-i18n="nav_beta">Bêta</a></li>
+                        <li><button id="mobile-lang-toggle" class="lang-btn">EN</button></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <!-- Hero Section -->
@@ -49,8 +72,7 @@
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
                 <a href="#solutions" class="btn btn-primary" data-i18n="hero_cta_offer">Découvrir les Offres</a>
-                <a href="#vision" class="btn" style="border: 1px solid var(--glass-border);"
-                    data-i18n="hero_cta_more">Notre Vision</a>
+                <a href="#vision" class="btn btn-outline" data-i18n="hero_cta_more">Notre Vision</a>
             </div>
         </section>
 
@@ -72,17 +94,38 @@
 
             <div class="cards-grid">
                 <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
                     <h3 data-i18n="card_backtest_title">Création & Backtest</h3>
                     <p data-i18n="card_backtest_desc">Développez et backtestez vos stratégies en Python avec notre
                         moteur ultra-rapide. Accédez à des métriques institutionnelles (Ratio de Sharpe, Sortino, Max
                         Drawdown).</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
                     <h3 data-i18n="card_risk_title">Gestion du Risque Avancée</h3>
                     <p data-i18n="card_risk_desc">Utilisez nos simulations Monte Carlo et nos outils d'analyse de
                         covariance pour stress-tester vos modèles.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
                     <h3 data-i18n="card_intel_title">Intelligence Collective</h3>
                     <p data-i18n="card_intel_desc">Participez aux analyses et utilisez les indicateurs de marché et
                         prévisions issus de la communauté pour affiner vos décisions.</p>

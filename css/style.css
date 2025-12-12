@@ -137,7 +137,7 @@ header {
     font-weight: 800;
     color: var(--text-color);
     letter-spacing: -0.5px;
-    background: linear-gradient(to right, #fff, #cbd5e1);
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -211,9 +211,25 @@ nav a.active {
 
 .hero p {
     font-size: 1.25rem;
-    color: var(--text-muted);
-    max-width: 600px;
+    color: #cbd5e1;
+    /* Lighter gray */
+    max-width: 700px;
     margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero p strong {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero p span {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.8;
 }
 
 .btn {
@@ -236,6 +252,18 @@ nav a.active {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 102, 255, 0.5);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--cyan-highlight);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--cyan-highlight);
 }
 
 /* Features/Presentation Section */
@@ -262,11 +290,19 @@ section {
 .section-title h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Decrease min-width for mobile */
     gap: 2rem;
 }
 
@@ -280,7 +316,8 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
+    /* Subtle zoom */
     border-color: var(--glass-highlight);
     background: rgba(255, 255, 255, 0.05);
 }
@@ -294,6 +331,11 @@ section {
 .card h3 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .card p {
@@ -339,8 +381,10 @@ section {
 /* Targets Section (Split) */
 .targets-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Slightly smaller min on mobile */
+    gap: 2rem;
+    /* Reduced gap */
 }
 
 .target-card {
@@ -394,9 +438,15 @@ section {
 }
 
 .badge-pro {
-    background: rgba(0, 102, 255, 0.1);
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.4), rgba(0, 102, 255, 0.1));
+    color: #fff;
+    border: 1px solid rgba(0, 102, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.2);
+}
+
+.target-card.pro .target-features li::before {
     color: var(--primary-blue);
-    border: 1px solid rgba(0, 102, 255, 0.2);
+    /* Match electric blue for pro */
 }
 
 .target-features {
@@ -418,6 +468,16 @@ section {
     font-weight: bold;
 }
 
+.target-card h3 {
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
 /* Contact Section */
 .contact {
     padding-top: 10rem;
@@ -433,9 +493,9 @@ section {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
-    padding: 1.5rem 4rem;
+    padding: 3rem 4rem;
     /* Reduced vertical, increased horizontal internal spacing */
-    max-width: 950px;
+    max-width: 1100px;
     /* Widened from 800px */
     margin: 0 auto;
     backdrop-filter: blur(16px);
@@ -475,6 +535,15 @@ section {
     outline: none;
     border-color: var(--cyan-highlight);
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+select.form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
 }
 
 .form-textarea {
@@ -518,7 +587,7 @@ section {
 
 .preview-item:hover {
     border-color: var(--cyan-highlight);
-    transform: scale(1.15) translateY(-10px);
+    transform: translateY(-5px) scale(1.02);
     z-index: 100;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     background: rgba(15, 23, 42, 0.9);
@@ -530,11 +599,20 @@ section {
     width: 100%;
 }
 
+.img-container {
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+}
+
 .preview-img {
     width: 100%;
-    height: auto;
-    display: block;
-    /* Zoom on image removed to focus on card pop, or kept subtle */
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .preview-caption {
@@ -618,6 +696,85 @@ section {
         border-top: 1px solid var(--glass-border);
     }
 
+    /* --- Mobile Navigation Styles --- */
+    .mobile-toggle {
+        display: none;
+        /* Hidden on desktop */
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2005;
+        /* Above overlay */
+        padding: 0.5rem;
+    }
+
+    .mobile-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 2px;
+        margin: 5px auto;
+        background-color: var(--text-color);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-toggle.open .bar-1 {
+        transform: translateY(7px) rotate(45deg);
+        background-color: var(--cyan-highlight);
+    }
+
+    .mobile-toggle.open .bar-2 {
+        opacity: 0;
+    }
+
+    .mobile-toggle.open .bar-3 {
+        transform: translateY(-7px) rotate(-45deg);
+        background-color: var(--cyan-highlight);
+    }
+
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(2, 12, 27, 0.95);
+        backdrop-filter: blur(20px);
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        /* Click through when hidden */
+        transition: opacity 0.4s ease;
+        flex-direction: column;
+    }
+
+    .mobile-menu-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .mobile-nav-content ul {
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mobile-nav-content a {
+        font-size: 1.5rem;
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .mobile-nav-content a:hover {
+        color: var(--cyan-highlight);
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
         header {
@@ -631,19 +788,39 @@ section {
 
     @media (max-width: 768px) {
         header {
-            flex-direction: column;
-            gap: 1.5rem;
-            padding: 1.5rem 1rem;
-            background: rgba(2, 12, 27, 0.8);
-            /* Darker bg for readability on scroll */
+            padding: 1.25rem 1.5rem;
+            /* No flex-direction: column here, keep row for logo + burger */
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(2, 12, 27, 0.85);
+            /* Slightly darker/more opaque */
             backdrop-filter: blur(15px);
+            height: 70px;
+            /* Fixed height for consistency */
         }
 
-        nav ul {
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+        /* Hide desktop nav */
+        .desktop-nav {
+            display: none;
         }
+
+        /* Show mobile toggle */
+        .mobile-toggle {
+            display: block;
+        }
+
+        /* Adjust section padding for mobile */
+        .hero {
+            padding-top: 100px;
+        }
+
+        .presentation,
+        .contact {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+        }
+
+
 
         .nav-link {
             font-size: 0.9rem;
@@ -666,6 +843,7 @@ section {
 
         .section-title h2 {
             font-size: 2rem;
+            padding: 0 1rem;
         }
 
         .card,
