@@ -303,9 +303,9 @@ header {
 /* Sections */
 .presentation,
 .contact {
-    padding-top: 12rem;
-    /* Huge space to isolate sections */
-    padding-bottom: 10rem;
+    padding-top: 20rem;
+    /* Massive space to isolate sections */
+    padding-bottom: 20rem;
 }
 
 .section-title h2 {
