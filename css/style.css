@@ -533,10 +533,8 @@ header {
     /* Header & Nav */
     header {
         padding: 2rem 4rem;
-        background: rgba(2, 12, 27, 0.9);
-        /* Dark background to hide content underneath */
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: transparent;
+        border: none;
     }
 
     .logo-img {
@@ -557,8 +555,8 @@ header {
 
     .desktop-nav ul {
         display: flex;
-        gap: 6rem;
-        /* Further increased spacing */
+        gap: 2.5rem;
+        /* Reverted to original spacing */
         list-style: none;
         align-items: center;
     }
