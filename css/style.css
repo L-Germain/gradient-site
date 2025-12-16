@@ -548,25 +548,15 @@ header {
     }
 
     .desktop-nav a {
+        color: var(--text-muted);
         text-decoration: none;
-        font-weight: 600;
-        /* Made slightly bolder for gradient visibility */
+        font-weight: 500;
         transition: 0.3s;
         font-size: 1rem;
-
-        /* Gradient Text */
-        background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        /* Fallback */
     }
 
     .desktop-nav a:hover {
-        opacity: 0.8;
-        /* Simple hover effect since color is fixed gradient */
-        transform: translateY(-1px);
+        color: var(--cyan-highlight);
     }
 
     /* Hero */
@@ -574,7 +564,6 @@ header {
         padding-top: 60px;
     }
 
-    /* Reset padding */
     .hero h1 {
         font-size: 4.5rem;
     }
@@ -597,12 +586,19 @@ header {
     /* Titles & Spacing */
     .section-title {
         margin-bottom: 6rem;
-        /* More space before grid */
+        text-align: center;
+        /* Enforce centering */
+        width: 100%;
     }
 
     .section-title h2 {
         font-size: 3rem;
-        /* Larger desktop titles */
+        /* Ensure gradient is visible on desktop */
+        background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
     }
 
     /* Grids */
