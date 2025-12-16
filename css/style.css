@@ -548,15 +548,25 @@ header {
     }
 
     .desktop-nav a {
-        color: var(--text-muted);
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
+        /* Made slightly bolder for gradient visibility */
         transition: 0.3s;
         font-size: 1rem;
+
+        /* Gradient Text */
+        background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        /* Fallback */
     }
 
     .desktop-nav a:hover {
-        color: var(--cyan-highlight);
+        opacity: 0.8;
+        /* Simple hover effect since color is fixed gradient */
+        transform: translateY(-1px);
     }
 
     /* Hero */
