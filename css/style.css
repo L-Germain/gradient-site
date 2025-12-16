@@ -529,8 +529,6 @@ header {
     padding: 2rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    margin-top: 3rem;
-    /* Extra space from title as requested */
 }
 
 .form-input,
