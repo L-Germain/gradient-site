@@ -27,6 +27,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 120px;
+    /* Prevents header from covering titles */
+    position: relative;
+    z-index: 10;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
@@ -522,8 +533,10 @@ header {
     /* Header & Nav */
     header {
         padding: 2rem 4rem;
-        background: transparent;
-        border: none;
+        background: rgba(2, 12, 27, 0.9);
+        /* Dark background to hide content underneath */
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .logo-img {
@@ -544,8 +557,8 @@ header {
 
     .desktop-nav ul {
         display: flex;
-        gap: 4rem;
-        /* Increased spacing */
+        gap: 6rem;
+        /* Further increased spacing */
         list-style: none;
         align-items: center;
     }
