@@ -499,6 +499,7 @@ header {
 }
 
 /* Forms */
+/* Forms */
 .form-input,
 .form-textarea {
     width: 100%;
@@ -508,6 +509,8 @@ header {
     border-radius: 12px;
     color: var(--text-color);
     margin-bottom: 1rem;
+    font-family: inherit;
+    /* Fixes font mismatch */
 }
 
 /* --- DESKTOP OVERRIDES (> 768px) --- */
