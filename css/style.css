@@ -600,8 +600,8 @@ header {
 
     /* Titles & Spacing */
     .section-title {
-        margin-bottom: 3rem;
-        /* Further reduced */
+        margin-bottom: 4.5rem;
+        /* Reverted back to 4.5rem */
         text-align: center;
         /* Enforce centering */
         width: 100%;
