@@ -1,3 +1,0 @@
-check_condition_crossover_with_tolerance() --> optimize tolerance level on historical data through statistical module
-
-correct sharpe_ratio rdnt and vol of strat not asset, set min of trades.
