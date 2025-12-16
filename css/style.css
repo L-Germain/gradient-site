@@ -523,6 +523,11 @@ header {
 
 /* Forms */
 /* Forms */
+#contact .section-title {
+    margin-bottom: 2rem;
+    /* Reduced specifically for contact to match visual pattern */
+}
+
 .contact-form {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -530,8 +535,6 @@ header {
     /* Standardized with target-card */
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    margin-top: 1rem;
-    /* Optical correction for gap */
 }
 
 .form-input,
