@@ -98,8 +98,7 @@ h4,
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
-    /* Standard mobile padding */
+    padding: 0 2rem;
 }
 
 /* Header (Universal) */
@@ -114,7 +113,6 @@ header {
     width: 100%;
     z-index: 100;
     background: rgba(2, 12, 27, 0.85);
-    /* Default to semi-transparent for readability */
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
@@ -128,7 +126,6 @@ header {
 
 .logo-img {
     height: 32px;
-    /* Smaller for mobile default */
     width: auto;
     border-radius: 8px;
 }
@@ -147,7 +144,6 @@ header {
 /* Mobile Toggle (Hamburger) */
 .mobile-toggle {
     display: block;
-    /* Visible by default (mobile-first) */
     background: transparent;
     border: none;
     cursor: pointer;
@@ -236,12 +232,10 @@ header {
     align-items: center;
     text-align: center;
     padding-top: 100px;
-    /* Space for fixed header */
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    /* Mobile Size */
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -265,7 +259,6 @@ header {
 .hero-buttons {
     display: flex;
     flex-direction: column;
-    /* Stack on mobile */
     gap: 1rem;
     width: 100%;
     padding: 0 1rem;
@@ -281,7 +274,6 @@ header {
     font-weight: 600;
     transition: all var(--transition-speed);
     width: 100%;
-    /* Full width mobile */
     text-align: center;
 }
 
@@ -324,22 +316,30 @@ header {
     gap: 1.5rem;
 }
 
-/* Cards (Generic) */
-.card,
-.target-card,
-.preview-item {
+/* --- RESTORED VISUAL STYLES FOR CARDS (Previously lost) --- */
+/* Applying these GLOBALLY so they work on mobile too */
+
+.card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    padding: 1.5rem;
+    padding: 2.5rem;
+    /* Restored padding */
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
+    transition: var(--transition-speed);
+}
+
+.card:hover {
+    transform: scale(1.03);
+    border-color: var(--glass-highlight);
+    background: rgba(255, 255, 255, 0.05);
+    /* Restored hover effect */
 }
 
 .card-icon {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    /* Restored margin */
     color: var(--cyan-highlight);
 }
 
@@ -357,9 +357,30 @@ header {
     color: var(--text-muted);
 }
 
-/* --- SPECIFIC COMPONENT STYLES (Restored) --- */
+/* --- PREVIEW ITEMS (Refined) --- */
+.preview-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
 
-/* Preview Items */
+.preview-item:hover {
+    border-color: var(--cyan-highlight);
+    transform: translateY(-5px) scale(1.02);
+    z-index: 100;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(15, 23, 42, 0.9);
+}
+
 .img-container {
     overflow: hidden;
     border-radius: 8px;
@@ -367,23 +388,34 @@ header {
     aspect-ratio: 16/9;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--glass-border);
-    margin-bottom: 1rem;
 }
 
 .preview-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.5s ease;
 }
 
 .preview-caption {
     text-align: center;
+    margin-top: 1rem;
     color: var(--text-muted);
     font-weight: 500;
 }
 
 /* Solutions / Target Cards */
+.target-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    /* Restored original padding */
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-speed);
+}
+
 .target-card::before {
     content: '';
     position: absolute;
@@ -400,6 +432,12 @@ header {
 
 .target-card.pro::before {
     background: var(--primary-blue);
+}
+
+.target-card:hover {
+    /* Restored hover */
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .target-badge {
@@ -428,35 +466,32 @@ header {
 
 .target-card h3 {
     margin-bottom: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    /* Restored size */
     background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #00f2ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: block;
 }
 
 .target-features {
     list-style: none;
-    margin-top: 1.5rem;
-    text-align: left;
-    /* Ensure left align inside center aligned containers if any */
+    margin-top: 2rem;
 }
 
 .target-features li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
 }
 
 .target-features li::before {
     content: '✓';
     color: var(--cyan-highlight);
     font-weight: bold;
-    flex-shrink: 0;
-    /* Prevent checkmark shrinking */
 }
 
 .target-card.pro .target-features li::before {
@@ -476,13 +511,15 @@ header {
 }
 
 /* --- DESKTOP OVERRIDES (> 768px) --- */
+/* These purely change Layout (Row vs Column), sizing, and margins. */
+/* The Visual Style (Border, Color, Shadow) is now handled globally above. */
+
 @media (min-width: 769px) {
 
     /* Header & Nav */
     header {
         padding: 2rem 4rem;
         background: transparent;
-        /* Transparent at top */
         border: none;
     }
 
@@ -521,6 +558,11 @@ header {
     }
 
     /* Hero */
+    .hero {
+        padding-top: 60px;
+    }
+
+    /* Reset padding */
     .hero h1 {
         font-size: 4.5rem;
     }
@@ -543,13 +585,15 @@ header {
     /* Grids */
     .cards-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* Original grid logic */
         gap: 2rem;
     }
 
     .targets-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Original grid logic */
         gap: 2rem;
     }
 
@@ -561,22 +605,13 @@ header {
 
     .preview-item {
         flex: 1 1 30%;
+        min-width: 300px;
         max-width: 32%;
+        /* Keep it under control */
     }
 
     .contact-container {
-        display: block;
-        /* allow default block layout for form container */
         padding: 3rem 4rem;
-    }
-
-    /* Hover Effects (Desktop Only) */
-    .card:hover,
-    .target-card:hover,
-    .preview-item:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.05);
-        border-color: var(--cyan-highlight);
     }
 }
 
