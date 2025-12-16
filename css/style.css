@@ -303,9 +303,12 @@ header {
 /* Sections */
 .presentation,
 .contact {
-    padding-top: 20rem;
-    /* Massive space to isolate sections */
-    padding-bottom: 20rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .section-title h2 {
