@@ -313,8 +313,8 @@ header {
 }
 
 .section-title {
-    margin-bottom: 3rem;
-    /* Mobile spacing between title and content */
+    margin-bottom: 5rem;
+    /* Increased to 5rem (~80px) for mobile */
     text-align: center;
 }
 
@@ -335,8 +335,8 @@ header {
 .preview-gallery {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    /* Increased from 1.5rem for better mobile separation */
+    gap: 4rem;
+    /* Increased to 4rem for distinct separation */
 }
 
 /* --- RESTORED VISUAL STYLES FOR CARDS (Previously lost) --- */
