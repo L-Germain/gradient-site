@@ -531,7 +531,6 @@ header {
     padding: 1rem;
     border-radius: 12px;
     color: var(--text-color);
-    color: var(--text-color);
     font-family: inherit;
     /* Fixes font mismatch */
 }
@@ -546,6 +545,17 @@ input.form-input,
 select.form-input {
     height: 54px;
     /* Uniform height */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+textarea.form-textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* --- DESKTOP OVERRIDES (> 768px) --- */
