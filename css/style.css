@@ -306,8 +306,10 @@ header {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 10rem;
+    justify-content: flex-start;
+    /* Align to top */
+    padding-top: 25vh;
+    /* Position title at ~25% from top */
     padding-bottom: 10rem;
 }
 
