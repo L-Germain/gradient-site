@@ -1,0 +1,74 @@
+/* Styles sobres pour le chatbot Claude - Gradient bleu, textes noirs */
+
+/* Scrollbar sobre */
+#chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatbot-messages::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb {
+    background: #2196F3;
+    border-radius: 3px;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb:hover {
+    background: #1976D2;
+}
+
+/* Markdown dans les messages */
+#chatbot-messages p {
+    margin-bottom: 0.5rem;
+}
+
+#chatbot-messages strong {
+    color: #1976D2;
+}
+
+#chatbot-messages code {
+    background-color: #E3F2FD;
+    color: #000000;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Boutons sobres */
+#chatbot-toggle-btn:hover {
+    opacity: 0.9;
+}
+
+#chatbot-send-message:hover {
+    opacity: 0.9;
+}
+
+/* Animation Pulse pour le bouton */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(33, 150, 243, 0);
+    }
+
+    100% {
+        transform: scale(0.8);
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+    }
+}
+
+.chatbot-pulse {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background-color: #00bcd4;
+    /* Cyan */
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}

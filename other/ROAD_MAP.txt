@@ -1,0 +1,17 @@
+impression de la donnée brut 
+ajouter la possibilité de upload de la data csv 
+option de param les stat sur open high low close
+impression des statistic sur la données 
+impression graph de prix
+
+impression des rendement et rendement cumulés
+fonction pour indicateurs techniques avec retour de signal de trading binaire et sens du trade(vecteur)
+fonction de calcule de pnl & pnl accumulé + graph du pnl
+
+fonction multi strat en ET/OU
+
+déduction des take profite et stop loss de la strat
+
+stratégies de paire:
+cointégration
+arbitrage etf

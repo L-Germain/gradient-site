@@ -1,0 +1,429 @@
+/* THÈME CORPORATE - PROFESSIONAL TRADING */
+
+:root {
+    /* Palette corporate */
+    --bg-primary: #f5f6fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-blue: #2563eb;
+    
+    /* Couleurs business */
+    --success-green: #059669;
+    --danger-red: #dc2626;
+    --success-light: #10b981;
+    --danger-light: #ef4444;
+    
+    --warning-amber: #d97706;
+    --border-color: #e5e7eb;
+    --neutral-slate: #64748b;
+    
+    /* Variables des composants */
+    --card-bg: var(--bg-secondary);
+    --card-header-bg: linear-gradient(135deg, #1e40af, #2563eb);
+    --card-border: var(--border-color);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-radius: 8px;
+    
+    --input-bg: var(--bg-card);
+    --input-border: #d1d5db;
+    --input-radius: 6px;
+    
+    --button-radius: 6px;
+    --button-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    
+    /* Couleurs par type d'actif */
+    --asset-stocks-color: #2563eb;
+    --asset-crypto-color: #d97706;
+    --asset-forex-color: #059669;
+    --asset-etfs-color: #7c3aed;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+}
+
+/* Typography professionnelle */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 0.75rem !important;
+}
+
+h1 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #1e40af, #2563eb) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+h2 { font-size: 1.875rem !important; }
+h3 { font-size: 1.5rem !important; }
+h4 { font-size: 1.25rem !important; }
+
+/* Cards professionnelles */
+.card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: var(--card-radius) !important;
+    box-shadow: var(--card-shadow) !important;
+    margin-bottom: 1.5rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(-1px) !important;
+}
+
+.card-header {
+    background: var(--card-header-bg) !important;
+    border-bottom: 1px solid var(--card-border) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1rem !important;
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+}
+
+.card-body {
+    padding: 1.5rem !important;
+}
+
+/* Header corporate */
+.container-fluid > div:first-child {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dropdowns professionnels */
+.Select-control {
+    background: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: var(--input-radius) !important;
+    color: var(--text-primary) !important;
+    min-height: 42px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.Select-control:hover {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+.Select-menu-outer {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Boutons corporate */
+.btn {
+    border-radius: var(--button-radius) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    border: none !important;
+    box-shadow: var(--button-shadow) !important;
+    transition: all 0.15s ease !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    letter-spacing: 0.025em !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), #3b82f6) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, var(--accent-blue)) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3) !important;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-green), var(--success-light)) !important;
+    color: white !important;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #047857, var(--success-green)) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger-red), var(--danger-light)) !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #b91c1c, var(--danger-red)) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6b7280, #9ca3af) !important;
+    color: white !important;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #0891b2, #06b6d4) !important;
+    color: white !important;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--warning-amber), #f59e0b) !important;
+    color: white !important;
+}
+
+/* Inputs professionnels */
+.form-control {
+    background: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: var(--input-radius) !important;
+    color: var(--text-primary) !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.15s ease !important;
+}
+
+.form-control:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+    outline: none !important;
+}
+
+/* Labels */
+label {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Alertes corporate */
+.alert {
+    border: none !important;
+    border-radius: var(--card-radius) !important;
+    padding: 1rem 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 500 !important;
+    box-shadow: var(--card-shadow) !important;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.1), rgba(16, 185, 129, 0.05)) !important;
+    color: var(--success-green) !important;
+    border-left: 4px solid var(--success-green) !important;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(239, 68, 68, 0.05)) !important;
+    color: var(--danger-red) !important;
+    border-left: 4px solid var(--danger-red) !important;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.05)) !important;
+    color: var(--accent-blue) !important;
+    border-left: 4px solid var(--accent-blue) !important;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(245, 158, 11, 0.05)) !important;
+    color: var(--warning-amber) !important;
+    border-left: 4px solid var(--warning-amber) !important;
+}
+
+/* Tables corporate */
+.dash-table-container {
+    border-radius: var(--card-radius) !important;
+    overflow: hidden !important;
+    box-shadow: var(--card-shadow) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.dash-table-container table {
+    background: white !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.dash-table-container th {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    padding: 1rem 0.75rem !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-size: 12px !important;
+}
+
+.dash-table-container td {
+    padding: 0.875rem 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    font-weight: 500 !important;
+}
+
+/* Onglets corporate */
+.nav-tabs {
+    border-bottom: 2px solid var(--border-color) !important;
+    margin-bottom: 2rem !important;
+    background: var(--bg-secondary) !important;
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    padding: 0 1rem !important;
+}
+
+.nav-tabs .nav-link {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-secondary) !important;
+    padding: 1.25rem 2rem !important;
+    font-weight: 600 !important;
+    border-radius: 0 !important;
+    border-bottom: 3px solid transparent !important;
+    transition: all 0.15s ease !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.025em !important;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--accent-blue) !important;
+    border-bottom-color: rgba(37, 99, 235, 0.3) !important;
+    background: rgba(37, 99, 235, 0.05) !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--accent-blue) !important;
+    border-bottom-color: var(--accent-blue) !important;
+    background: rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Badges corporate */
+.badge {
+    font-weight: 600 !important;
+    font-size: 0.75em !important;
+    padding: 0.5em 1em !important;
+    border-radius: 50px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, var(--accent-blue), #3b82f6) !important;
+    color: white !important;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, var(--success-green), var(--success-light)) !important;
+    color: white !important;
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, var(--danger-red), var(--danger-light)) !important;
+    color: white !important;
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, var(--warning-amber), #f59e0b) !important;
+    color: white !important;
+}
+
+/* Progress bars */
+.progress {
+    background: var(--border-color) !important;
+    border-radius: 50px !important;
+    height: 8px !important;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--accent-blue), #3b82f6) !important;
+    border-radius: 50px !important;
+}
+
+/* Scrollbars corporate */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--neutral-slate), var(--text-secondary));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--text-secondary), var(--text-primary));
+}
+
+/* Classes spécifiques trading */
+.positive-value, .profit-value {
+    color: var(--success-green) !important;
+    font-weight: 700 !important;
+}
+
+.negative-value, .loss-value {
+    color: var(--danger-red) !important;
+    font-weight: 700 !important;
+}
+
+/* Effets de focus et hover professionnels */
+.card:focus-within {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Animations fluides */
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: slideInFromTop 0.3s ease-out !important;
+}
+
+/* Responsive corporate */
+@media (max-width: 1024px) {
+    .nav-tabs .nav-link {
+        padding: 1rem 1.5rem !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem !important;
+    }
+    
+    .btn {
+        padding: 0.65rem 1.25rem !important;
+    }
+    
+    h1 { font-size: 1.875rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    
+    .nav-tabs .nav-link {
+        padding: 0.875rem 1rem !important;
+        font-size: 12px !important;
+    }
+}

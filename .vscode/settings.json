@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./_dash",
+        "./_"
+    ]
+}

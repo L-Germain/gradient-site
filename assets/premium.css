@@ -1,0 +1,662 @@
+/* PREMIUM TRADING DASHBOARD/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* --- LIGHT THEME (Clean Blue / Professional) --- */
+    --bg-primary: #f0f7ff;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.7);
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #94a3b8;
+    --border-light: #e2e8f0;
+
+    --primary-blue: #0066ff;
+    --cyan-highlight: #0891b2;
+    /* Toned down from #06b6d4 */
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, #0066ff 0%, #0891b2 100%);
+    /* Blue -> Deep Cyan */
+    --gradient-text: linear-gradient(135deg, #0066ff 0%, #0891b2 100%);
+
+    /* App Specific */
+    --color-gain-start: #059669;
+    --color-gain-end: #0d9488;
+    /* Teal instead of bright cyan */
+    --gradient-gain: linear-gradient(135deg, var(--color-gain-start) 0%, var(--color-gain-end) 100%);
+
+    --color-loss-start: #dc2626;
+    --color-loss-end: #991b1b;
+    --gradient-loss: linear-gradient(135deg, var(--color-loss-start) 0%, var(--color-loss-end) 100%);
+
+    --color-accent: #2563eb;
+    /* Professional Blue (Royal) */
+    --color-accent-hover: #1d4ed8;
+
+    --glass-blur: blur(12px);
+    --shadow-card: 0 4px 20px -2px rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] {
+    /* --- DARK THEME (Refined Gradient Site Identity) --- */
+    --bg-primary: #050a14;
+    --bg-secondary: #020c1b;
+    --bg-card: rgba(255, 255, 255, 0.03);
+
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --border-light: rgba(255, 255, 255, 0.08);
+
+    --primary-blue: #3b82f6;
+    /* Lighter blue for dark mode */
+    --cyan-highlight: #22d3ee;
+    /* Soft Cyan, not Neon */
+
+    /* Gradients (Dark Mode: More coherent, less harsh) */
+    --gradient-brand: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #22d3ee 100%);
+    --gradient-text: linear-gradient(135deg, #e2e8f0 0%, #60a5fa 100%);
+    /* White -> Blue (Easier on eyes) */
+
+    --color-gain-start: #10b981;
+    --color-gain-end: #0ea5e9;
+    /* Emerald to Sky Blue */
+    --gradient-gain: linear-gradient(135deg, var(--color-gain-start) 0%, var(--color-gain-end) 100%);
+
+    --color-loss-start: #ef4444;
+    --color-loss-end: #b91c1c;
+    --gradient-loss: linear-gradient(135deg, var(--color-loss-start) 0%, var(--color-loss-end) 100%);
+
+    --color-accent: #3b82f6;
+    /* Blue Accent, NOT Cyan */
+    --color-accent-hover: #2563eb;
+
+    --shadow-card: 0 4px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Apply Gradient to all major headers globally */
+h1,
+h2,
+h3,
+.gradient-title {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    /* Required for gradient text sometimes */
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    /* For blobs */
+}
+
+/* Background Animation Elements */
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    /* Light mode: very subtle */
+    animation: float 10s infinite ease-in-out;
+}
+
+[data-theme="dark"] .blob {
+    opacity: 0.4;
+    /* Dark mode: vibrant */
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: var(--primary-blue);
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--cyan-highlight), var(--primary-blue));
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+}
+
+/* --- COMPONENTS (Standard Bootstrap Overrides - SAFE) --- */
+/* --- COMPONENTS (Glassmorphism) --- */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    /* Site style */
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.3); Optional boost */
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--border-light);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1.25rem 1.5rem;
+
+    /* Gradient Text for Headers like site */
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* color: transparent;  Warning: This might hide icons inside header if not handled carefully. 
+       Better to apply gradient class to text specifically, but for generic headers let's keep it white/primary for now
+       Wait, the site applies gradient to h2, h3. Let's not force it on card-header container or it will affect everything.
+    */
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5 {
+    margin-bottom: 0;
+}
+
+/* --- BUTTONS (Standard Shapes - No Forced 50px) --- */
+.btn {
+    border-radius: 6px;
+    /* Standard small visible curve */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+}
+
+/* Apply the requested Gradients strictly to appropriate classes */
+.btn-success {
+    background: var(--gradient-gain) !important;
+    border: none !important;
+    color: #000 !important;
+    box-shadow: 0 4px 6px rgba(0, 227, 150, 0.2);
+}
+
+.btn-danger {
+    background: var(--gradient-loss) !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: 0 4px 6px rgba(255, 82, 82, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-blue) !important;
+    /* Solid coherent blue */
+    border: none !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
+    /* Subtle blue shadow */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover) !important;
+    box-shadow: 0 6px 15px rgba(0, 102, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+/* --- UTILITIES --- */
+.text-success,
+.text-gradient-gain {
+    background: var(--gradient-gain);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.text-danger,
+.text-gradient-loss {
+    background: var(--gradient-loss);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.form-control {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+/* --- Alerts & Toasts --- */
+.alert {
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-card) !important;
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.1) !important;
+    color: var(--success) !important;
+    border-left: 4px solid var(--success) !important;
+}
+
+.alert-info {
+    background: rgba(6, 182, 212, 0.1) !important;
+    color: var(--info) !important;
+    border-left: 4px solid var(--info) !important;
+}
+
+/* --- Trading Indicators --- */
+.text-success {
+    background: var(--gradient-gain);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.text-danger {
+    background: var(--gradient-loss);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.text-warning {
+    color: var(--warning) !important;
+}
+
+.text-info {
+    color: var(--info) !important;
+}
+
+.text-muted {
+    color: var(--text-tertiary) !important;
+}
+
+/* Badge styles */
+.badge-stock {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--asset-stock);
+    border: 1px solid var(--asset-stock);
+}
+
+.badge-crypto {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--asset-crypto);
+    border: 1px solid var(--asset-crypto);
+}
+
+.badge-forex {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--asset-forex);
+    border: 1px solid var(--asset-forex);
+}
+
+/* Fix plotly background */
+.js-plotly-plot .plotly .main-svg {
+    background: transparent !important;
+}
+
+/* Fix dropdown z-index issues */
+div[id*="decision-block"] .Select-menu-outer,
+div[id*="condition-block"] .Select-menu-outer {
+    z-index: 99999 !important;
+    position: relative !important;
+}
+
+/* ==========================================================================
+   RESTORED COMPONENT STYLES (Dropdowns, Sidebar, Tabs)
+   ========================================================================== */
+
+/* --- Dropdowns (React Select) --- */
+.Select-control {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+}
+
+.Select-value-label {
+    color: var(--text-primary) !important;
+}
+
+.Select-menu-outer {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.Select-option {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+.Select-option:hover,
+.Select-option.is-focused {
+    background-color: var(--color-accent) !important;
+    color: white !important;
+}
+
+.Select-placeholder {
+    color: var(--text-secondary) !important;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border-light);
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.sidebar-link:hover {
+    background-color: var(--bg-secondary);
+    color: var(--color-accent);
+}
+
+.sidebar-link.active {
+    background: linear-gradient(90deg, rgba(0, 102, 255, 0.1) 0%, transparent 100%);
+    color: var(--color-accent);
+    border-left: 3px solid var(--color-accent);
+}
+
+.content-wrapper {
+    margin-left: 280px;
+    padding: 30px;
+    min-height: 100vh;
+    background-color: transparent;
+    /* Changed from var(--bg-primary) for blobs */
+    transition: margin-left 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Tabs --- */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 10px 20px !important;
+}
+
+.nav-link.active {
+    color: var(--color-accent) !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--color-accent) !important;
+}
+
+.nav-link:hover {
+    color: var(--color-accent-hover) !important;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Toggle Button for Sidebar (Mobile Only) */
+#mobile-sidebar-toggle {
+    display: none;
+    /* Hidden on desktop */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1050;
+    /* Above everything */
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    color: var(--primary-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#mobile-sidebar-toggle:hover {
+    transform: scale(1.1);
+    color: var(--cyan-highlight);
+}
+
+/* Overlay for Mobile Sidebar */
+#mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 99;
+    /* Below sidebar, above content */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#mobile-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* --- MEDIA QUERIES (Tablets & Mobile: < 992px) --- */
+@media (max-width: 991.98px) {
+
+    /* 1. Layout & Sidebar */
+    .sidebar {
+        left: -290px;
+        /* Hidden by default */
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar.active {
+        left: 0;
+        /* Slide in */
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        /* Full width */
+        padding: 15px;
+        /* Reduced padding */
+        padding-top: 70px;
+        /* Space for toggle button */
+    }
+
+    /* Show Toggle Button */
+    #mobile-sidebar-toggle {
+        display: block;
+    }
+
+    /* 2. Typography & Fonts */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1.1rem;
+    }
+
+    /* 3. Components adjustments */
+
+    /* Wizard Badge Container - Scrollable horizontal if needed */
+    #wizard-progress-container .d-flex,
+    .text-center.mb-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    /* Wizard Choices cards vertical stack */
+    .wizard-choice-card {
+        margin-bottom: 15px;
+    }
+
+    /* Asset Selector Dropdowns */
+    .section-card-header .row {
+        flex-direction: column;
+    }
+
+    .section-card-header .text-right {
+        text-align: left !important;
+        margin-top: 0.5rem;
+    }
+
+    /* Date Picker Responsive */
+    .DateInput {
+        width: 100px !important;
+    }
+
+    .DateRangePickerInput {
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Tables & Graphs scroll */
+    .dash-graph-container,
+    .dash-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Buttons touch friendly */
+    .btn {
+        min-height: 44px;
+        /* Apple Human Interface Guidelines */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 4. Modals */
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+/* --- SMALL MOBILE (Phones: < 576px) --- */
+@media (max-width: 575.98px) {
+    .content-wrapper {
+        padding: 10px;
+        padding-top: 70px;
+    }
+
+    /* Stack buttons in Wizard Footer */
+    #wizard-step-4 .row .col-md-6,
+    #wizard-step-1 .row .col-md-6 {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust charts height */
+    .js-plotly-plot {
+        height: 350px !important;
+    }
+}

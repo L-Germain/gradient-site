@@ -1,0 +1,580 @@
+/* THÈME MODERN TERMINAL - 80s AUTHENTIQUE MODERNISÉ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Palette terminal moderne */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --text-primary: #00ff41;
+    --text-secondary: #33ff55;
+    --accent-amber: #ffb000;
+    
+    /* Couleurs terminal authentiques */
+    --success-green: #00ff41;
+    --danger-red: #ff073a;
+    --success-light: #39ff14;
+    --danger-light: #ff1744;
+    
+    --warning-orange: #ffb000;
+    --border-color: #00ff41;
+    --neutral-cyan: #00ffff;
+    
+    /* Variables des composants */
+    --card-bg: var(--bg-card);
+    --card-header-bg: linear-gradient(90deg, #001100, #002200);
+    --card-border: #00ff41;
+    --card-shadow: 0 0 20px rgba(0, 255, 65, 0.2), inset 0 1px 0 rgba(0, 255, 65, 0.1);
+    --card-radius: 4px;
+    
+    --input-bg: #0a0a0a;
+    --input-border: #00ff41;
+    --input-radius: 2px;
+    
+    --button-radius: 2px;
+    --button-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+    
+    /* Couleurs par type d'actif avec scan lines */
+    --asset-stocks-color: #00ff41;
+    --asset-crypto-color: #ffb000;
+    --asset-forex-color: #00ffff;
+    --asset-etfs-color: #ff073a;
+    
+    /* Polices terminal modernes */
+    --font-mono: 'JetBrains Mono', 'Space Mono', 'Consolas', 'Monaco', monospace;
+    --font-display: 'Space Mono', 'Courier New', monospace;
+}
+
+/* Animation CRT authentique */
+@keyframes crtFlicker {
+    0% { opacity: 1; }
+    98% { opacity: 1; }
+    99% { opacity: 0.98; }
+    100% { opacity: 1; }
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+body {
+    background: var(--bg-primary) !important;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 65, 0.03) 2px,
+            rgba(0, 255, 65, 0.03) 4px
+        ) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    animation: crtFlicker 0.15s infinite linear !important;
+    cursor: none !important;
+}
+
+/* Curseur terminal personnalisé */
+body::after {
+    content: '';
+    position: fixed;
+    width: 8px;
+    height: 16px;
+    background: var(--text-primary);
+    box-shadow: 0 0 8px var(--text-primary);
+    pointer-events: none;
+    z-index: 9999;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Effet scanline mobile */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--text-primary), transparent);
+    z-index: 9998;
+    animation: scanlines 3s linear infinite;
+    pointer-events: none;
+}
+
+/* Typography terminal moderne */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+    font-family: var(--font-display) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 0 10px currentColor !important;
+    margin-bottom: 1rem !important;
+    position: relative !important;
+}
+
+h1 {
+    font-size: 2rem !important;
+    animation: flicker 2s infinite alternate !important;
+}
+
+h1::before {
+    content: '> ';
+    color: var(--accent-amber);
+}
+
+h2::before { content: '>> '; color: var(--neutral-cyan); }
+h3::before { content: '>>> '; color: var(--text-secondary); }
+
+@keyframes flicker {
+    0%, 100% { 
+        text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor, 0 0 20px currentColor;
+    }
+    50% { 
+        text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 8px currentColor, 0 0 12px currentColor;
+    }
+}
+
+/* Cards terminal avec effet CRT */
+.card {
+    background: var(--card-bg) !important;
+    border: 2px solid var(--card-border) !important;
+    border-radius: var(--card-radius) !important;
+    box-shadow: var(--card-shadow) !important;
+    margin-bottom: 1.5rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    font-family: var(--font-mono) !important;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 65, 0.02) 2px,
+            rgba(0, 255, 65, 0.02) 4px
+        );
+    pointer-events: none;
+}
+
+.card:hover {
+    border-color: var(--text-secondary) !important;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.4) !important;
+    animation: terminalGlow 0.3s ease !important;
+}
+
+@keyframes terminalGlow {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.1); }
+    100% { filter: brightness(1); }
+}
+
+.card-header {
+    background: var(--card-header-bg) !important;
+    border-bottom: 2px solid var(--card-border) !important;
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    padding: 0.75rem 1rem !important;
+    font-family: var(--font-display) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    position: relative !important;
+}
+
+.card-header::before {
+    content: '[STATUS: ACTIVE]';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    color: var(--success-green);
+    animation: blink 2s infinite;
+}
+
+.card-body {
+    padding: 1rem !important;
+    font-family: var(--font-mono) !important;
+    line-height: 1.6 !important;
+}
+
+/* Dropdowns terminal */
+.Select-control {
+    background: var(--input-bg) !important;
+    border: 2px solid var(--input-border) !important;
+    border-radius: var(--input-radius) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    min-height: 40px !important;
+    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1) !important;
+}
+
+.Select-control:hover {
+    border-color: var(--text-secondary) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3) !important;
+}
+
+.Select-control:focus-within {
+    border-color: var(--accent-amber) !important;
+    box-shadow: 0 0 20px rgba(255, 176, 0, 0.4) !important;
+}
+
+.Select-menu-outer {
+    background: var(--bg-secondary) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: var(--input-radius) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3) !important;
+    backdrop-filter: blur(1px) !important;
+}
+
+.Select-option {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    padding: 0.5rem 0.75rem !important;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+}
+
+.Select-option:hover {
+    background: rgba(0, 255, 65, 0.1) !important;
+    color: var(--text-secondary) !important;
+}
+
+.Select-option.is-selected {
+    background: rgba(0, 255, 65, 0.2) !important;
+    color: var(--success-green) !important;
+}
+
+/* Boutons terminal */
+.btn {
+    background: var(--bg-secondary) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: var(--button-radius) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    border-color: var(--text-secondary) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: var(--button-shadow) !important;
+    text-shadow: 0 0 5px currentColor !important;
+}
+
+.btn-primary {
+    border-color: var(--accent-amber) !important;
+    color: var(--accent-amber) !important;
+}
+
+.btn-primary:hover {
+    border-color: var(--warning-orange) !important;
+    color: var(--warning-orange) !important;
+    box-shadow: 0 0 15px rgba(255, 176, 0, 0.4) !important;
+}
+
+.btn-success {
+    border-color: var(--success-green) !important;
+    color: var(--success-green) !important;
+}
+
+.btn-danger {
+    border-color: var(--danger-red) !important;
+    color: var(--danger-red) !important;
+}
+
+/* Inputs terminal */
+.form-control {
+    background: var(--input-bg) !important;
+    border: 2px solid var(--input-border) !important;
+    border-radius: var(--input-radius) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    padding: 0.75rem !important;
+    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1) !important;
+}
+
+.form-control:focus {
+    border-color: var(--accent-amber) !important;
+    box-shadow: 0 0 15px rgba(255, 176, 0, 0.3) !important;
+    color: var(--text-primary) !important;
+    outline: none !important;
+}
+
+.form-control::placeholder {
+    color: rgba(0, 255, 65, 0.5) !important;
+    font-style: italic !important;
+}
+
+/* Labels terminal */
+label {
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 0.5rem !important;
+    position: relative !important;
+}
+
+label::before {
+    content: '> ';
+    color: var(--accent-amber);
+}
+
+/* Alertes terminal */
+.alert {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid !important;
+    border-radius: var(--card-radius) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    position: relative !important;
+}
+
+.alert::before {
+    content: '[SYSTEM MESSAGE]';
+    position: absolute;
+    top: -10px;
+    left: 1rem;
+    background: var(--bg-primary);
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+    color: inherit;
+}
+
+.alert-success {
+    border-color: var(--success-green) !important;
+    color: var(--success-green) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2) !important;
+}
+
+.alert-danger {
+    border-color: var(--danger-red) !important;
+    color: var(--danger-red) !important;
+    box-shadow: 0 0 15px rgba(255, 7, 58, 0.2) !important;
+}
+
+.alert-info {
+    border-color: var(--neutral-cyan) !important;
+    color: var(--neutral-cyan) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2) !important;
+}
+
+.alert-warning {
+    border-color: var(--warning-orange) !important;
+    color: var(--warning-orange) !important;
+    box-shadow: 0 0 15px rgba(255, 176, 0, 0.2) !important;
+}
+
+/* Tables terminal */
+.dash-table-container {
+    background: var(--bg-secondary) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: var(--card-radius) !important;
+    overflow: hidden !important;
+    font-family: var(--font-mono) !important;
+    position: relative !important;
+}
+
+.dash-table-container::before {
+    content: '[DATA MATRIX]';
+    position: absolute;
+    top: -10px;
+    left: 1rem;
+    background: var(--bg-primary);
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+    color: var(--accent-amber);
+    z-index: 10;
+}
+
+.dash-table-container th {
+    background: var(--bg-primary) !important;
+    color: var(--accent-amber) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    padding: 0.75rem !important;
+}
+
+.dash-table-container td {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+    padding: 0.5rem 0.75rem !important;
+}
+
+.dash-table-container tr:hover td {
+    background: rgba(0, 255, 65, 0.05) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Onglets terminal */
+.nav-tabs {
+    background: var(--bg-secondary) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    margin-bottom: 0 !important;
+    font-family: var(--font-mono) !important;
+}
+
+.nav-tabs .nav-link {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(0, 255, 65, 0.7) !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border-bottom: 2px solid transparent !important;
+    font-family: var(--font-mono) !important;
+    position: relative !important;
+}
+
+.nav-tabs .nav-link::before {
+    content: '[ ';
+    color: var(--accent-amber);
+}
+
+.nav-tabs .nav-link::after {
+    content: ' ]';
+    color: var(--accent-amber);
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--text-secondary) !important;
+    text-shadow: 0 0 5px currentColor !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--accent-amber) !important;
+    border-bottom-color: var(--accent-amber) !important;
+    text-shadow: 0 0 10px currentColor !important;
+    background: rgba(255, 176, 0, 0.05) !important;
+}
+
+/* Badges terminal */
+.badge {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    font-weight: 600 !important;
+    padding: 0.3rem 0.6rem !important;
+    border-radius: var(--input-radius) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 0.65rem !important;
+}
+
+/* Scrollbars terminal */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 0;
+    box-shadow: inset 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Classes spécifiques trading terminal */
+.positive-value, .profit-value {
+    color: var(--success-green) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 10px currentColor !important;
+    font-family: var(--font-mono) !important;
+}
+
+.negative-value, .loss-value {
+    color: var(--danger-red) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 10px currentColor !important;
+    font-family: var(--font-mono) !important;
+}
+
+/* Effets authentiques mais modernes */
+.card, .btn, .form-control {
+    transition: all 0.1s ease !important;
+}
+
+/* Animation de démarrage terminal */
+@keyframes bootup {
+    0% { opacity: 0; transform: scale(1.1); }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.card {
+    animation: bootup 0.5s ease-out !important;
+}
+
+/* Responsive terminal */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 0.75rem !important;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.25rem !important; }
+    
+    .nav-tabs .nav-link {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+    }
+}

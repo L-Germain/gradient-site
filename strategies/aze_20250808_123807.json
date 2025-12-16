@@ -1,0 +1,43 @@
+{
+  "name": "aze",
+  "created_at": "2025-08-08 12:38:07",
+  "initial_capital": 100000,
+  "allocation_pct": 10,
+  "transaction_cost": 1,
+  "stop_loss_pct": 5,
+  "take_profit_pct": 10,
+  "date_range": {
+    "start": "2024-01-01",
+    "end": "2025-01-01"
+  },
+  "decision_blocks": [
+    {
+      "conditions": [
+        {
+          "stock1": "test",
+          "indicator1": {
+            "type": "SMA",
+            "params": [
+              20
+            ]
+          },
+          "operator": ">",
+          "comparison_type": "indicator",
+          "stock2": "test",
+          "indicator2": {
+            "type": "SMA",
+            "params": [
+              50
+            ]
+          }
+        }
+      ],
+      "actions": {
+        "test": "Acheter"
+      }
+    }
+  ],
+  "selected_stocks": [
+    "test"
+  ]
+}
