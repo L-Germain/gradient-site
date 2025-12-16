@@ -569,7 +569,8 @@ select.form-input {
 
 textarea.form-textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 80px;
+    /* Reduced from 120px */
 }
 
 /* --- DESKTOP OVERRIDES (> 768px) --- */
