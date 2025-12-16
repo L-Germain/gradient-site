@@ -541,7 +541,8 @@ header {
 
     .desktop-nav ul {
         display: flex;
-        gap: 2.5rem;
+        gap: 4rem;
+        /* Increased spacing */
         list-style: none;
         align-items: center;
     }
@@ -551,6 +552,7 @@ header {
         text-decoration: none;
         font-weight: 500;
         transition: 0.3s;
+        font-size: 1rem;
     }
 
     .desktop-nav a:hover {
@@ -580,6 +582,17 @@ header {
     .btn {
         width: auto;
         padding: 1rem 2.5rem;
+    }
+
+    /* Titles & Spacing */
+    .section-title {
+        margin-bottom: 6rem;
+        /* More space before grid */
+    }
+
+    .section-title h2 {
+        font-size: 3rem;
+        /* Larger desktop titles */
     }
 
     /* Grids */
