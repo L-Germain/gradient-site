@@ -523,6 +523,16 @@ header {
 
 /* Forms */
 /* Forms */
+.contact-form {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-top: 3rem;
+    /* Extra space from title as requested */
+}
+
 .form-input,
 .form-textarea {
     width: 100%;
