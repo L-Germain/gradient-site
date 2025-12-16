@@ -312,6 +312,12 @@ header {
     padding-bottom: 10rem;
 }
 
+.section-title {
+    margin-bottom: 3rem;
+    /* Mobile spacing between title and content */
+    text-align: center;
+}
+
 .section-title h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -329,7 +335,8 @@ header {
 .preview-gallery {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
+    /* Increased from 1.5rem for better mobile separation */
 }
 
 /* --- RESTORED VISUAL STYLES FOR CARDS (Previously lost) --- */
@@ -524,9 +531,21 @@ header {
     padding: 1rem;
     border-radius: 12px;
     color: var(--text-color);
-    margin-bottom: 1rem;
+    color: var(--text-color);
     font-family: inherit;
     /* Fixes font mismatch */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    /* Uniform spacing between fields */
+}
+
+/* Enforce height for inputs/selects but not textareas */
+input.form-input,
+select.form-input {
+    height: 54px;
+    /* Uniform height */
 }
 
 /* --- DESKTOP OVERRIDES (> 768px) --- */
