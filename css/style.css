@@ -531,8 +531,8 @@ header {
 .contact-form {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    padding: 3rem;
-    /* Standardized with target-card */
+    padding: 2rem;
+    /* Reduced box size */
     border-radius: 20px;
     backdrop-filter: blur(10px);
 }
