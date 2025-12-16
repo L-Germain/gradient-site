@@ -669,6 +669,8 @@ textarea.form-textarea {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 2rem;
+        /* Restore correct desktop spacing (override global 4rem) */
     }
 
     .preview-item {
