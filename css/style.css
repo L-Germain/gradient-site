@@ -531,8 +531,8 @@ header {
 .contact-form {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    padding: 2rem;
-    /* Reduced box size */
+    padding: 1.5rem;
+    /* Compacted padding */
     border-radius: 20px;
     backdrop-filter: blur(10px);
 }
@@ -569,8 +569,7 @@ select.form-input {
 
 textarea.form-textarea {
     resize: vertical;
-    min-height: 80px;
-    /* Reduced from 120px */
+    min-height: 70px;
 }
 
 /* --- DESKTOP OVERRIDES (> 768px) --- */
