@@ -307,8 +307,8 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     /* Align to top */
-    padding-top: 15vh;
-    /* Postion title at ~15% from top (85% free space below) */
+    padding-top: 12vh;
+    /* Even higher: ~12% from top */
     padding-bottom: 10rem;
 }
 
